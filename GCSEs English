@@ -1,0 +1,30 @@
+print("GCSES Revision Quiz")
+
+print("English Macbeth")
+
+class Question:
+  def __init__(self, prompt, answer):
+    self.prompt = prompt
+    self.answer = answer
+
+question_prompts = [
+    "How does King Duncan die?\n(A) He is poisoned\n (B) He is stabbed by Macbeth\n (C) He falls from a horse\n (D) He dies in battle\n\n",
+    "Who tells Macbeth he will become king?\n(A) Banquo\n (B) The three witches\n (C) Lady Macbeth\n (D) King Duncan\n\n",
+    "Who finds Duncan's body?\n(A) Macbeth\n (B) Lady Macbeth\n (C) Macduff\n (D) Banquo\n\n",
+]
+
+questions = [
+    Question(question_prompts[0], "b"),
+    Question(question_prompts[1], "b"),
+    Question(question_prompts[2], "c"),
+]
+
+
+def run_test(questions):
+  score = 0
+  for question in questions:
+    answer = input(question.prompt)
+    if answer == question.answer:
+      score+= 1
+  print("You got "+ str(score) + "/" + str(len(questions)))
+run_test(questions)
